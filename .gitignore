@@ -2,10 +2,5 @@
 __pycache__/
 *.pyc
 .DS_Store
-*.csv
-bert_t5_model/
-bert_t5_results/
-simple_bert_t5_model/
-simple_bert_t5_results/
-final_model/
 pgvector/
+.dist/
