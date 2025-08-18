@@ -24,6 +24,44 @@ The Medical Assistant Bot is an advanced question-answering system designed to u
 - **Reliable Information**: Consistent answers based on validated medical datasets
 - **Semantic Search**: Advanced retrieval from comprehensive knowledge base
 
+### Model Development Assumptions
+
+### 1. Data Quality Assumptions
+
+- Medical question-answer pairs in the dataset are accurate and medically sound
+- The dataset represents diverse medical queries that users would typically ask
+- Preprocessing steps (cleaning, normalization) don't remove critical medical context
+- Training/validation/test splits are representative of real-world usage
+
+### 2. Model Architecture Assumptions
+
+- BERT-based retrieval is suitable for medical domain semantic similarity
+- T5 generation model can produce coherent medical responses
+- Hybrid BERT+T5 approach performs better than individual models
+- 200 token input limit is sufficient for most medical questions
+- 50 token output limit provides adequate answer length
+
+### 3. Training Assumptions
+
+- Limited training data (50 samples) is sufficient for proof-of-concept
+- 2 epochs are adequate to avoid overfitting with small dataset
+- Learning rate of 5e-4 is optimal for medical domain fine-tuning
+- Context similarity threshold of 0.4 effectively filters relevant examples
+
+### 4. Evaluation Assumptions
+
+- Word overlap and semantic similarity metrics accurately reflect answer quality
+- Human evaluation would align with automated metrics
+- Test set performance generalizes to real-world medical queries
+- "GOOD" rating threshold appropriately categorizes model performance
+
+### 5. Deployment Assumptions
+
+- Users will ask well-formed medical questions
+- Local deployment is sufficient for demonstration purposes
+- FastAPI + Streamlit architecture meets performance requirements
+- PostgreSQL database provides adequate query performance
+
 ## Architecture
 
 ![Medical chatbot](https://github.com/user-attachments/assets/7bf25766-3d2e-40c0-934a-a9a274ba2e4b)
