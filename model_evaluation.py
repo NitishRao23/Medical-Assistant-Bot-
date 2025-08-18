@@ -50,7 +50,7 @@ class CompactEvaluator:
         return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
     
     def simple_bleu(self, ref, pred):
-        """Simple word overlap score"""
+        # Simple word overlap score
         ref_words = set(ref.lower().split())
         pred_words = set(pred.lower().split())
         if not pred_words: return 0.0
