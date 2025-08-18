@@ -2,7 +2,7 @@
 
 An intelligent medical question-answering system that combines BERT-based retrieval with T5-based generation to provide comprehensive answers to medical queries.
 
-##Project Overview
+## Project Overview
 
 The Medical Assistant Bot is an advanced question-answering system designed to understand and respond to user queries about medical diseases and health topics. Using a hybrid approach that combines BERT-based retrieval for finding relevant medical information and T5-based generation for creating comprehensive answers, this system provides accurate, contextually relevant medical information through a user-friendly web interface.
 
@@ -13,7 +13,7 @@ The Medical Assistant Bot is an advanced question-answering system designed to u
 - **Comprehensive Evaluation**: Multiple metrics for performance assessment
 - **Semantic Search**: Advanced retrieval from curated medical knowledge base
 
-##Problems Addressed
+## Problems Addressed
 
 ### Current Challenges
 - Users struggle to find quick, reliable answers to basic medical questions
@@ -24,7 +24,7 @@ The Medical Assistant Bot is an advanced question-answering system designed to u
 - **Reliable Information**: Consistent answers based on validated medical datasets
 - **Semantic Search**: Advanced retrieval from comprehensive knowledge base
 
-##Architecture
+## Architecture
 
 ![Medical chatbot](https://github.com/user-attachments/assets/7bf25766-3d2e-40c0-934a-a9a274ba2e4b)
 
@@ -35,7 +35,7 @@ The Medical Assistant Bot is an advanced question-answering system designed to u
 - **Scalable Web Application**: FastAPI backend + Streamlit frontend
 - **User-Centric Design**: Intuitive interface for enhanced accessibility
 
-##Dataset
+## Dataset
 
 **Source**: [MLE Screening Dataset](https://drive.google.com/file/d/1upzfj8bXP012zZsq01jcoeO9NyhmTHnQ/view?usp=drive_link)
 
@@ -130,7 +130,7 @@ Max Output Length: 50 tokens
 | Word Overlap | 0.531 | 0.538 |
 | Performance Rating | **GOOD** | **GOOD** |
 
-##Deployment
+## Deployment
 
 ### Local Deployment Setup
 1. **Backend Service**: FastAPI server on `localhost:8000`
@@ -142,11 +142,11 @@ Max Output Length: 50 tokens
 - Python 3.8+
 - PostgreSQL database
 
-##Screenshots
+## Screenshots
 
 ![Medical Assistant Bot Interface](https://github.com/user-attachments/assets/f71017f8-3f14-4d0f-92eb-3a265c6a76d4)
 
-##Usage
+## Usage
 
 1. Start the FastAPI backend server
 2. Launch the Streamlit frontend application
