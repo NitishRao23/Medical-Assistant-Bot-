@@ -17,9 +17,6 @@ The Medical Assistant Bot is an advanced question-answering system designed to u
 
 ### Current Challenges
 - Users struggle to find quick, reliable answers to basic medical questions
-- Patients spend hours searching through multiple unreliable sources
-- Healthcare professionals face information overload during consultations
-- Internet searches often return conflicting medical information
 
 ### Solutions
 - ✅ **Immediate Responses**: Trained NLP models provide instant, accurate medical answers
