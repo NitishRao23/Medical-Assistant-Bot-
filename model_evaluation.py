@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-"""Compact evaluation script for BERT + T5 model"""
+#!/usr/bin/env python
 
 import pandas as pd
 import torch
