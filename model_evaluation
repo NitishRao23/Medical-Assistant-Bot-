@@ -63,12 +63,12 @@ class CompactEvaluator:
         return cosine_similarity(ref_emb, pred_emb)[0][0]
     
     def evaluate(self, test_file, max_samples=20):
-        print(f"📊 Evaluating on {test_file}...")
+        print(f"Evaluating on {test_file}...")
         
         try:
             df = pd.read_csv(test_file).head(max_samples)
         except:
-            print(f"❌ {test_file} not found!")
+            print(f"{test_file} not found!")
             return None
         
         bleu_scores, sem_scores = [], []
@@ -88,17 +88,17 @@ class CompactEvaluator:
         avg_sem = np.mean(sem_scores)
         overall = (avg_bleu * 0.4 + avg_sem * 0.6)
         
-        print(f"\n📈 RESULTS:")
+        print(f"\nRESULTS:")
         print(f"  Word Overlap Score: {avg_bleu:.3f}")
         print(f"  Semantic Similarity: {avg_sem:.3f}")
         print(f"  Overall Score: {overall:.3f}")
         
-        if overall >= 0.6: print("✅ EXCELLENT performance!")
-        elif overall >= 0.4: print("🔄 GOOD performance")
-        else: print("⚠️ NEEDS IMPROVEMENT")
+        if overall >= 0.6: print("EXCELLENT performance!")
+        elif overall >= 0.4: print("GOOD performance")
+        else: print("NEEDS IMPROVEMENT")
         
         # Show examples
-        print(f"\n🔍 TOP 2 EXAMPLES:")
+        print(f"\n TOP 2 EXAMPLES:")
         best_indices = np.argsort(sem_scores)[-2:][::-1]
         
         for i, idx in enumerate(best_indices, 1):
@@ -111,7 +111,7 @@ class CompactEvaluator:
         return overall
 
 def main():
-    print("🚀 Compact Model Evaluation")
+    print("Compact Model Evaluation")
     evaluator = CompactEvaluator()
     
     # Test on available files
@@ -120,7 +120,7 @@ def main():
         if score: print(f"\n{test_file}: {score:.3f}")
         print("-" * 40)
     
-    print("✅ Evaluation completed!")
+    print("Evaluation completed!")
 
 if __name__ == "__main__":
     main()
