@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-"""Compact BERT + T5 Medical QA System for Mac M2"""
-
 import pandas as pd
 import torch
 import numpy as np
@@ -57,7 +55,6 @@ def tokenize(examples, tokenizer):
     return model_inputs
 
 def main():
-    print("🚀 Compact BERT + T5 Medical QA Training")
     
     # Initialize system
     system = CompactBERTT5()
