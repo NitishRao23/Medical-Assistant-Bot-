@@ -53,7 +53,7 @@ class CompactBERTT5Inference:
         inputs = self.t5_tokenizer(
             inp, 
             return_tensors="pt", 
-            # max_length=5120, 
+            max_length=5120, 
             truncation=True,
             padding=True
         )
@@ -65,9 +65,9 @@ class CompactBERTT5Inference:
             outputs = self.t5_model.generate(
                 inputs['input_ids'],
                 attention_mask=inputs['attention_mask'],
-                max_new_tokens=10240,       # Increased
+                max_new_tokens=10240,    
                 num_beams=4,
-                do_sample=False,          # Changed to False
+                do_sample=False,      
                 pad_token_id=self.t5_tokenizer.pad_token_id,
                 eos_token_id=self.t5_tokenizer.eos_token_id,
                 early_stopping=False,
@@ -89,12 +89,12 @@ class CompactBERTT5Inference:
             
             # Check if answer seems complete (ends with punctuation or has reasonable length)
             if (answer.strip().endswith(('.', '!', '?')) or 
-                len(answer.strip()) > 100):  # Adjust threshold as needed
+                len(answer.strip()) > 100): 
                 return answer
             
             print(f"Attempt {attempt + 1}: Answer seems incomplete, retrying...")
             
-        return answer  # Return the last attempt even if incomplete
+        return answer  
 
 if __name__ == "__main__":
     # Initialize the QA System
