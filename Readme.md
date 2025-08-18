@@ -21,9 +21,8 @@ The Medical Assistant Bot is an advanced question-answering system designed to u
 - Healthcare professionals face information overload during consultations
 - Internet searches often return conflicting medical information
 
-### Our Solutions
+### Solutions
 - ✅ **Immediate Responses**: Trained NLP models provide instant, accurate medical answers
-- ✅ **24/7 Availability**: Round-the-clock access to medical information
 - ✅ **Contextual Understanding**: Hybrid BERT+T5 architecture for complex query comprehension
 - ✅ **Reliable Information**: Consistent answers based on validated medical datasets
 - ✅ **Semantic Search**: Advanced retrieval from comprehensive knowledge base
@@ -145,31 +144,10 @@ Max Output Length: 50 tokens
 ### System Requirements
 - Python 3.8+
 - PostgreSQL database
-- Apple M2 chip (MPS acceleration) or CUDA-compatible GPU
 
 ## 🖥️ Screenshots
 
 ![Medical Assistant Bot Interface](https://github.com/user-attachments/assets/f71017f8-3f14-4d0f-92eb-3a265c6a76d4)
-
-## 📦 Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/NitishRao23/Medical-Assistant-Bot-.git
-cd Medical-Assistant-Bot-
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up PostgreSQL database
-# Configure database connection in config files
-
-# Run the backend
-python backend/main.py
-
-# Run the frontend (in another terminal)
-streamlit run frontend/app.py
-```
 
 ## 🔧 Usage
 
@@ -178,25 +156,10 @@ streamlit run frontend/app.py
 3. Enter your medical question in the text input field
 4. Receive comprehensive, AI-generated medical information
 
-## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Medical dataset providers
 - Open-source NLP model contributors
 - FastAPI and Streamlit communities
 
-## 📞 Contact
-
-**Project Maintainer**: Nitish Rao  
-**Repository**: [Medical-Assistant-Bot-](https://github.com/NitishRao23/Medical-Assistant-Bot-)
-
----
-
-⭐ If you found this project helpful, please give it a star!
