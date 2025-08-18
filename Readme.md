@@ -120,7 +120,7 @@ Max Output Length: 50 tokens
 - **Semantic Understanding**: Strong scores above 0.59
 - **Classification**: "GOOD" performance rating
 
-## Results
+## 5. Results
 
 ### Performance Metrics
 | Metric | Test Set | Validation Set |
@@ -130,7 +130,7 @@ Max Output Length: 50 tokens
 | Word Overlap | 0.531 | 0.538 |
 | Performance Rating | **GOOD** | **GOOD** |
 
-## Deployment
+## 6. Deployment
 
 ### Local Deployment Setup
 1. **Backend Service**: FastAPI server on `localhost:8000`
