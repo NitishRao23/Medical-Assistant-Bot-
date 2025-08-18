@@ -4,3 +4,7 @@ __pycache__/
 .DS_Store
 pgvector/
 .dist/
+*.safetensors
+*.pt
+training_args.bin
+*_results/
