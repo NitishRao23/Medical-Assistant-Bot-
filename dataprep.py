@@ -5,12 +5,8 @@ from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 from psycopg2.extras import execute_values
 import re
 
-#connection to Postgres
+# Connect to a PostgreSQL database
 def connect_to_postgres(user: str, password: str,db_name: str, host: str = "localhost", port: int = 5432 ) -> psycopg2.extensions.connection:
-    """
-    Connect to a PostgreSQL database
-    """
-    
     try:
             conn = psycopg2.connect(
                 dbname=db_name,
@@ -51,10 +47,7 @@ def normalize_question_marks(text: str) -> str:
     # Add single question mark at the end
     return text + '?'
 
-
-# ------------------------------
-# Function 1: Clean and normalize data
-# ------------------------------
+# Clean and normalize data
 def clean_data(file_path: str) -> pd.DataFrame:
     """
     Load and clean the medical Q&A dataset
@@ -68,24 +61,21 @@ def clean_data(file_path: str) -> pd.DataFrame:
     df['question'] = df['question'].str.strip().str.lower()
     df['answer'] = df['answer'].str.strip()
 
-    # Optional: remove extra spaces, newlines, non-ASCII chars
+    # remove extra spaces, newlines, non-ASCII chars and normalize question marks
     df['question'] = df['question'].apply(lambda x: re.sub(r'\s+', ' ', x))
     df['answer'] = df['answer'].apply(lambda x: re.sub(r'\s+', ' ', x))
-    # In your clean_data function, apply this:
     df['question'] = df['question'].apply(lambda x: normalize_question_marks(x))
+    
     # Drop duplicates
     df = df.drop_duplicates()
     
     # Group by question and combine answers
     df = df.groupby('question', as_index=False).agg({'answer': lambda x: ' '.join(x)})
-
     print(df.count())
         
     return df
 
-# ------------------------------
-# Function 2: Create Postgres database
-# ------------------------------
+# Create Postgres database
 def create_database(db_name: str, conn):
     """
     Create a PostgreSQL database if it doesn't exist
@@ -99,12 +89,9 @@ def create_database(db_name: str, conn):
         cur.execute(f"CREATE DATABASE {db_name}")
         print(f"Database '{db_name}' created successfully!")
     else:
-        
         print(f"Database '{db_name}' already exists.")
 
-# ------------------------------
-# Function 3: Create Postgres table
-# ------------------------------
+# Create Postgres table
 def create_table(conn, table_name: str):
     """
     Create a table for storing Q&A in Postgres
@@ -122,9 +109,7 @@ def create_table(conn, table_name: str):
     conn.commit()
     print(f"Table '{table_name}' is ready.")
 
-# ------------------------------
 # Function 4: Load data into Postgres
-# ------------------------------
 def load_data(df: pd.DataFrame, table_name: str, conn):
     """
     Load cleaned Q&A data into Postgres table
@@ -152,6 +137,7 @@ if __name__ == "__main__":
 
     df_clean = clean_data(file_path)
     # print(df_clean.head())
+    # print(df_clean.count())
     try:
         conn = connect_to_postgres(user, password, db_name)
         print("Connected to Postgres successfully.")
